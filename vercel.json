@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "buildCommand": "pnpm install && pnpm build",
+  "outputDirectory": "client/dist",
+  "framework": null,
+  "installCommand": "pnpm install",
+  "devCommand": "pnpm dev",
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/server/index.ts"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/client/dist/$1"
+    }
+  ],
+  "env": {
+    "DATABASE_URL": "@database_url",
+    "JWT_SECRET": "@jwt_secret",
+    "OAUTH_SERVER_URL": "@oauth_server_url",
+    "OWNER_OPEN_ID": "@owner_open_id",
+    "OWNER_NAME": "@owner_name",
+    "BUILT_IN_FORGE_API_URL": "@built_in_forge_api_url",
+    "BUILT_IN_FORGE_API_KEY": "@built_in_forge_api_key"
+  }
+}
